@@ -118,7 +118,7 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--headertext-color);
-  transition: 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 .header-link:hover,
 .header-link:focus {
@@ -176,7 +176,8 @@ ul {
   letter-spacing: 0.02em;
   color: var(--text-color);
   text-align: center;
-  transition: 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 }
 .header-mail {
   fill: var(--text-color);
@@ -212,7 +213,8 @@ ul {
   letter-spacing: 0.02em;
   color: var(--text-color);
   fill: var(--text-color);
-  transition: 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 
   align-content: center;
   align-items: flex-end;
@@ -270,7 +272,7 @@ ul {
   color: var(--background-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 
   cursor: pointer;
 }
@@ -464,7 +466,8 @@ ul {
   justify-content: center;
   fill: #afb1b8;
   background-color: var(--background-color);
-  transition: 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 }
 .subscribe-soc-link:hover,
 .subscribe-soc-link:focus {
@@ -508,7 +511,7 @@ ul {
   fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: 250ms var(--timing-function);
+  transition: fill 250ms var(--timing-function);
 }
 .clients-icon {
 }
@@ -551,7 +554,9 @@ ul {
   color: var(--headertext-color);
   cursor: pointer;
   background-color: var(--background-color-mainteam);
-  transition: 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function),
+    backgraund-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function);
 }
 .button-name:hover,
 .button-name:focus {
@@ -582,7 +587,7 @@ ul {
   margin-top: 30px;
 }
 .portfolio-link {
-  transition: 250ms var(--timing-function);
+  transition: box-shadow 250ms var(--timing-function);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
@@ -591,8 +596,9 @@ ul {
 }
 .portfolio-thumb {
   position: relative;
+  overflow: hidden;
 }
-.portfolio-overlay {
+/*.portfolio-overlay {
   position: absolute;
   background-color: rgba(33, 150, 243, 0.9);
   top: 0;
@@ -600,12 +606,12 @@ ul {
   width: 100%;
   height: 100%;
   transform: translateY(100%);
-  transition: transform 250ms var(--timing-function);
+  transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
   opacity: 0;
-}
-.portfolio-link:hover .portfolio-overlay {
+}*/
+.portfolio-link:hover .portfolio-thumb-text {
   transform: translateY(0);
-  opacity: 1;
 }
 .portfolio-thumb-text {
   font-weight: 400;
@@ -614,6 +620,15 @@ ul {
   letter-spacing: 0.03em;
   color: #ffffff;
   padding: 63px 24px;
+  position: absolute;
+  background-color: rgba(33, 150, 243, 0.9);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
+  overflow: auto;
 }
 /*.portfolio-list .portfolio-item + .portfolio-item {
   margin-left: 30px;
@@ -646,6 +661,7 @@ ul {
   border-right: 1px solid #eeeeee;
 
   background-color: var(--background-color);
+  transform: scale(1);
 }
 .portfolio-title {
   margin-bottom: 4px;
@@ -706,7 +722,7 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--background-color);
-  transition: opacity 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 .address-footer-link:hover,
 .address-footer-link:focus {
@@ -723,7 +739,7 @@ ul {
   letter-spacing: 0.03em;
   color: var(--color-footer);
   text-decoration: none;
-  transition: opacity 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 .mail-footer:hover,
 .mail-footer:focus {
@@ -737,7 +753,7 @@ ul {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--color-footer);
-  transition: opacity 250ms var(--timing-function);
+  transition: color 250ms var(--timing-function);
 }
 .tel-footer:hover,
 .tel-footer:focus {
@@ -775,11 +791,38 @@ ul {
   justify-content: center;
   fill: var(--background-color);
   background: rgba(255, 255, 255, 0.1);
-  transition: opacity 250ms var(--timing-function);
+  transition: background-color 250ms var(--timing-function);
 }
 .joing-link:hover,
 .joing-link:focus {
   background-color: var(--accent-color);
 }
 .joing-icon {
+}
+/*------overlay-----*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.modal {
+  width: 528px;
+  min-height: 581px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
