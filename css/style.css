@@ -218,7 +218,7 @@ ul {
     fill 250ms var(--timing-function);
 
   align-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 .header-tel:hover,
 .header-tel:focus {
