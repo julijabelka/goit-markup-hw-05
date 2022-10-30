@@ -218,7 +218,7 @@ ul {
     fill 250ms var(--timing-function);
 
   align-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 .header-tel:hover,
 .header-tel:focus {
@@ -512,14 +512,15 @@ ul {
   fill: #afb1b8;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: fill 250ms var(--timing-function);
+  transition: fill 250ms var(--timing-function),
+    border-color 250ms var(--timing-function);
 }
 .clients-icon {
 }
 .clients-link:hover,
 .clients-link:focus {
   fill: var(--accent-color);
-  border: 1px solid var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /*----------Portfolio------*/
@@ -556,7 +557,7 @@ ul {
   cursor: pointer;
   background-color: var(--background-color-mainteam);
   transition: color 250ms var(--timing-function),
-    backgraund-color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function),
     box-shadow 250ms var(--timing-function);
 }
 .button-name:hover,
